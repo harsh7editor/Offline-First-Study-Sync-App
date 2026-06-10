@@ -17,14 +17,16 @@
   "devDependencies": {
     "@types/react": "~19.2.2",
     "@types/uuid": "^10.0.0",
-    "typescript": "~6.0.3"
+    "typescript": "~6.0.3",
+    "live-server": "^1.2.2"
   },
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "build:web": "expo build:web"
+    "build:web": "expo export:web",
+    "serve:build": "live-server web-build --port=3000 --open=."
   },
   "private": true
 }
