@@ -1,0 +1,205 @@
+{
+  "name": "Study Sync Focus Session Success Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "study-session-success",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        250,
+        360
+      ],
+      "id": "webhook-node-id",
+      "name": "Webhook"
+    },
+    {
+      "parameters": {
+        "url": "http://localhost:3000/api/notifications/status",
+        "sendQueryParameters": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "sessionId",
+              "value": "={{ $json.body.sessionId }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        480,
+        360
+      ],
+      "id": "check-status-node-id",
+      "name": "Check Status"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValueString": "",
+            "valueComparisonString": "exists"
+          },
+          "conditions": [
+            {
+              "id": "cond-sent",
+              "leftValue": "={{ $json.sent }}",
+              "comparison": "equals",
+              "rightValue": true
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        700,
+        360
+      ],
+      "id": "if-node-id",
+      "name": "If Already Sent"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:3000/webhooks/notification-receive",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "sessionId",
+              "value": "={{ $('Webhook').item.json.body.sessionId }}"
+            },
+            {
+              "name": "deviceId",
+              "value": "={{ $('Webhook').item.json.body.deviceId }}"
+            },
+            {
+              "name": "message",
+              "value": "=Streak now {{ $('Webhook').item.json.body.streak }} days, +{{ $('Webhook').item.json.body.coins }} coins."
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        940,
+        450
+      ],
+      "id": "send-msg-node-id",
+      "name": "Send Mock Msg"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "http://localhost:3000/api/notifications/status",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "sessionId",
+              "value": "={{ $('Webhook').item.json.body.sessionId }}"
+            },
+            {
+              "name": "sent",
+              "value": "=true"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [
+        1180,
+        450
+      ],
+      "id": "set-sent-node-id",
+      "name": "Set Notification Sent"
+    },
+    {
+      "parameters": {
+        "message": "Notification already processed. Skipping to guarantee exactly-once delivery."
+      },
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        940,
+        250
+      ],
+      "id": "noop-node-id",
+      "name": "Deduplicated"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Check Status",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Status": {
+      "main": [
+        [
+          {
+            "node": "If Already Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Already Sent": {
+      "main": [
+        [
+          {
+            "node": "Deduplicated",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Mock Msg",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Mock Msg": {
+      "main": [
+        [
+          {
+            "node": "Set Notification Sent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "templateCredsSetupCompleted": true
+  }
+}

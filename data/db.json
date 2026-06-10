@@ -1,0 +1,244 @@
+{
+  "operations": [
+    {
+      "eventId": "yr3vivskt",
+      "deviceId": "phone-1",
+      "entityId": "y6nt73bjk",
+      "entityType": "session",
+      "operation": "CREATE_SESSION",
+      "payload": "{\"deviceId\":\"phone-1\",\"duration\":25,\"startTime\":\"2026-06-10T12:39:24.609Z\",\"endTime\":null,\"status\":\"running\",\"failReason\":null,\"rewardsProcessed\":0,\"coinsAwarded\":0}",
+      "version": 1,
+      "clientTimestamp": 1781095164610,
+      "id": 1
+    },
+    {
+      "eventId": "vavok553q",
+      "deviceId": "phone-1",
+      "entityId": "y6nt73bjk",
+      "entityType": "session",
+      "operation": "UPDATE_SESSION",
+      "payload": "{\"status\":\"failed\",\"endTime\":\"2026-06-10T12:39:29.513Z\",\"failReason\":\"give_up\",\"rewardsProcessed\":0,\"coinsAwarded\":0}",
+      "version": 2,
+      "clientTimestamp": 1781095169513,
+      "id": 2
+    },
+    {
+      "eventId": "obl7k1jmi",
+      "deviceId": "phone-1",
+      "entityId": "tjdahpifr",
+      "entityType": "session",
+      "operation": "CREATE_SESSION",
+      "payload": "{\"deviceId\":\"phone-1\",\"duration\":25,\"startTime\":\"2026-06-10T12:39:30.866Z\",\"endTime\":null,\"status\":\"running\",\"failReason\":null,\"rewardsProcessed\":0,\"coinsAwarded\":0}",
+      "version": 1,
+      "clientTimestamp": 1781095170866,
+      "id": 3
+    },
+    {
+      "eventId": "o6kae28z4",
+      "deviceId": "phone-1",
+      "entityId": "tjdahpifr",
+      "entityType": "session",
+      "operation": "UPDATE_SESSION",
+      "payload": "{\"status\":\"failed\",\"endTime\":\"2026-06-10T12:39:34.416Z\",\"failReason\":\"give_up\",\"rewardsProcessed\":0,\"coinsAwarded\":0}",
+      "version": 2,
+      "clientTimestamp": 1781095174416,
+      "id": 4
+    },
+    {
+      "eventId": "pdb7030is",
+      "deviceId": "phone-1",
+      "entityId": "cwccpqeny",
+      "entityType": "session",
+      "operation": "CREATE_SESSION",
+      "payload": "{\"deviceId\":\"phone-1\",\"duration\":25,\"startTime\":\"2026-06-10T12:50:19.716Z\",\"endTime\":null,\"status\":\"running\",\"failReason\":null,\"rewardsProcessed\":0,\"coinsAwarded\":0}",
+      "version": 1,
+      "clientTimestamp": 1781095819716,
+      "id": 5
+    },
+    {
+      "eventId": "q6n2b6uqw",
+      "deviceId": "phone-1",
+      "entityId": "cwccpqeny",
+      "entityType": "session",
+      "operation": "UPDATE_SESSION",
+      "payload": "{\"status\":\"failed\",\"endTime\":\"2026-06-10T12:50:25.396Z\",\"failReason\":\"give_up\",\"rewardsProcessed\":0,\"coinsAwarded\":0}",
+      "version": 2,
+      "clientTimestamp": 1781095825396,
+      "id": 6
+    },
+    {
+      "eventId": "duktojulz",
+      "deviceId": "phone-1",
+      "entityId": "mt5zshqun",
+      "entityType": "session",
+      "operation": "CREATE_SESSION",
+      "payload": "{\"deviceId\":\"phone-1\",\"duration\":25,\"startTime\":\"2026-06-10T12:50:26.733Z\",\"endTime\":null,\"status\":\"running\",\"failReason\":null,\"rewardsProcessed\":0,\"coinsAwarded\":0}",
+      "version": 1,
+      "clientTimestamp": 1781095826733,
+      "id": 7
+    },
+    {
+      "eventId": "toqr86jxo",
+      "deviceId": "phone-1",
+      "entityId": "mt5zshqun",
+      "entityType": "session",
+      "operation": "UPDATE_SESSION",
+      "payload": "{\"status\":\"failed\",\"endTime\":\"2026-06-10T12:50:30.163Z\",\"failReason\":\"give_up\",\"rewardsProcessed\":0,\"coinsAwarded\":0}",
+      "version": 2,
+      "clientTimestamp": 1781095830163,
+      "id": 8
+    }
+  ],
+  "tasks": [
+    {
+      "id": "task-1",
+      "chapterId": "chap-1-1",
+      "title": "Linear Equations",
+      "status": "NOT_STARTED",
+      "deleted": 0,
+      "version": 1,
+      "lastModifiedDevice": "backend-init",
+      "lastModifiedTimestamp": 1781069210890
+    },
+    {
+      "id": "task-2",
+      "chapterId": "chap-1-1",
+      "title": "Quadratic Equations",
+      "status": "NOT_STARTED",
+      "deleted": 0,
+      "version": 1,
+      "lastModifiedDevice": "backend-init",
+      "lastModifiedTimestamp": 1781069210890
+    },
+    {
+      "id": "task-3",
+      "chapterId": "chap-1-1",
+      "title": "Systems of Equations",
+      "status": "NOT_STARTED",
+      "deleted": 0,
+      "version": 1,
+      "lastModifiedDevice": "backend-init",
+      "lastModifiedTimestamp": 1781069210890
+    },
+    {
+      "id": "task-4",
+      "chapterId": "chap-1-2",
+      "title": "Pythagorean Theorem",
+      "status": "NOT_STARTED",
+      "deleted": 0,
+      "version": 1,
+      "lastModifiedDevice": "backend-init",
+      "lastModifiedTimestamp": 1781069210890
+    },
+    {
+      "id": "task-5",
+      "chapterId": "chap-1-2",
+      "title": "Circle Properties",
+      "status": "NOT_STARTED",
+      "deleted": 0,
+      "version": 1,
+      "lastModifiedDevice": "backend-init",
+      "lastModifiedTimestamp": 1781069210890
+    },
+    {
+      "id": "task-6",
+      "chapterId": "chap-2-1",
+      "title": "Newton's Laws",
+      "status": "NOT_STARTED",
+      "deleted": 0,
+      "version": 1,
+      "lastModifiedDevice": "backend-init",
+      "lastModifiedTimestamp": 1781069210890
+    },
+    {
+      "id": "task-7",
+      "chapterId": "chap-2-1",
+      "title": "Kinetic Energy",
+      "status": "NOT_STARTED",
+      "deleted": 0,
+      "version": 1,
+      "lastModifiedDevice": "backend-init",
+      "lastModifiedTimestamp": 1781069210890
+    },
+    {
+      "id": "task-8",
+      "chapterId": "chap-2-2",
+      "title": "Periodic Table",
+      "status": "NOT_STARTED",
+      "deleted": 0,
+      "version": 1,
+      "lastModifiedDevice": "backend-init",
+      "lastModifiedTimestamp": 1781069210890
+    },
+    {
+      "id": "task-9",
+      "chapterId": "chap-2-2",
+      "title": "Chemical Bonding",
+      "status": "NOT_STARTED",
+      "deleted": 0,
+      "version": 1,
+      "lastModifiedDevice": "backend-init",
+      "lastModifiedTimestamp": 1781069210890
+    }
+  ],
+  "sessions": [
+    {
+      "id": "y6nt73bjk",
+      "deviceId": "phone-1",
+      "duration": 25,
+      "startTime": "2026-06-10T12:39:24.609Z",
+      "endTime": "2026-06-10T12:39:29.513Z",
+      "status": "failed",
+      "failReason": "give_up",
+      "rewardsProcessed": 0,
+      "coinsAwarded": 0,
+      "version": 2,
+      "lastModifiedDevice": "phone-1",
+      "lastModifiedTimestamp": 1781095169513
+    },
+    {
+      "id": "tjdahpifr",
+      "deviceId": "phone-1",
+      "duration": 25,
+      "startTime": "2026-06-10T12:39:30.866Z",
+      "endTime": "2026-06-10T12:39:34.416Z",
+      "status": "failed",
+      "failReason": "give_up",
+      "rewardsProcessed": 0,
+      "coinsAwarded": 0,
+      "version": 2,
+      "lastModifiedDevice": "phone-1",
+      "lastModifiedTimestamp": 1781095174416
+    },
+    {
+      "id": "cwccpqeny",
+      "deviceId": "phone-1",
+      "duration": 25,
+      "startTime": "2026-06-10T12:50:19.716Z",
+      "endTime": "2026-06-10T12:50:25.396Z",
+      "status": "failed",
+      "failReason": "give_up",
+      "rewardsProcessed": 0,
+      "coinsAwarded": 0,
+      "version": 2,
+      "lastModifiedDevice": "phone-1",
+      "lastModifiedTimestamp": 1781095825396
+    },
+    {
+      "id": "mt5zshqun",
+      "deviceId": "phone-1",
+      "duration": 25,
+      "startTime": "2026-06-10T12:50:26.733Z",
+      "endTime": "2026-06-10T12:50:30.163Z",
+      "status": "failed",
+      "failReason": "give_up",
+      "rewardsProcessed": 0,
+      "coinsAwarded": 0,
+      "version": 2,
+      "lastModifiedDevice": "phone-1",
+      "lastModifiedTimestamp": 1781095830163
+    }
+  ],
+  "processed_rewards": {},
+  "notification_status": {}
+}
