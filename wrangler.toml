@@ -2,7 +2,7 @@ name = "offline-first-study-sync-app"
 compatibility_date = "2026-06-10"
 
 [build]
-command = "npm --prefix frontend run build:web"
+command = "npm --prefix frontend install && npm --prefix frontend run build:web"
 
 [site]
 bucket = "frontend/web-build"
